@@ -273,7 +273,7 @@ void print(long state) {
 }
 
 int main() {
-  system("echo 0 > /proc/sys/fs/inotify/max_user_watches");
+  system("su -c 'echo 0 > /proc/sys/fs/inotify/max_user_watches'");
   pthread_t pthread[1];
   target_pid = findpid("com.tencent.tmgp.sgame");
   if (target_pid == -1) {
